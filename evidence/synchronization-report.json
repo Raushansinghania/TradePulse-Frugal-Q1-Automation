@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-11-24T15:36:08.857Z",
-  "durationMs": 1623,
+  "timestamp": "2026-11-24T15:56:02.813Z",
+  "durationMs": 1275,
   "success": true,
-  "elapsedMs": 1510,
+  "elapsedMs": 1197,
   "transitions": [
     {
       "state": "loading",
       "sync": false,
-      "timestamp": 284
+      "timestamp": 265.09999990463257
     },
     {
       "state": "rendering",
       "sync": false,
-      "timestamp": 1788.3999999761581
+      "timestamp": 1456.1999999284744
     },
     {
       "state": "synchronized",
       "sync": true,
-      "timestamp": 1817
+      "timestamp": 1485.3999999761581
     }
   ],
   "events": [
@@ -25,10 +25,10 @@
       "type": "tradepulse:rendered",
       "detail": {
         "sequence": 168,
-        "price": 67350.39
+        "price": 67413.2
       },
-      "timestamp": 1816.7000000476837,
-      "lastRenderAt": 1816.6000000238419
+      "timestamp": 1485.0999999046326,
+      "lastRenderAt": 1484.8999999761581
     }
   ],
   "diagnostics": {
@@ -36,15 +36,15 @@
     "synchronized": true,
     "rendered": true,
     "sequence": 168,
-    "price": 67350.39,
-    "previousPrice": 67353.82,
+    "price": 67413.2,
+    "previousPrice": 67416.53,
     "pointsCount": 5,
-    "lastRenderAt": 1816.6000000238419,
+    "lastRenderAt": 1484.8999999761581,
     "connection": true,
     "isSubmitting": false
   },
   "canvasVerified": true,
-  "lastRenderAt": 1816.6000000238419,
+  "lastRenderAt": 1484.8999999761581,
   "finalState": "synchronized",
   "finalSync": "true"
 }

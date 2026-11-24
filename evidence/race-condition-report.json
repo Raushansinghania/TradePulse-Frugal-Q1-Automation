@@ -1,12 +1,12 @@
 {
-  "testTimestamp": "2026-11-24T15:36:06.280Z",
-  "renderEventTimestamp": 1761.5999999046326,
-  "firstClickTimestamp": 1821.5999999046326,
-  "firstClickDelayMs": 60,
+  "testTimestamp": "2026-11-24T15:56:00.592Z",
+  "renderEventTimestamp": 1532.8000000715256,
+  "firstClickTimestamp": 1593.6000000238419,
+  "firstClickDelayMs": 60.8,
   "clickTimestamps": [
-    1821.5999999046326,
-    1824.6999999284744,
-    1824.6999999284744
+    1593.6000000238419,
+    1598.8000000715256,
+    1598.8000000715256
   ],
   "inConfiguredWindow": true,
   "targetOffsetConfigured": 50,
@@ -15,8 +15,8 @@
     "max": 120
   },
   "eventDetail": {
-    "sequence": 158,
-    "price": 67329.86
+    "sequence": 159,
+    "price": 67425.12
   },
   "buttonDisabledAfterBurst": true,
   "transactionRequestsCount": 1,
@@ -26,18 +26,18 @@
       "url": "http://127.0.0.1:3000/api/transaction",
       "method": "POST",
       "postData": "{\"action\":\"BUY\",\"symbol\":\"BTCUSDT\",\"quantity\":0.001,\"precision\":\"67450.00\"}",
-      "timestamp": 1795534565982
+      "timestamp": 1795535760445
     }
   ],
   "responsesPayloads": [
     {
       "url": "http://127.0.0.1:3000/api/transaction",
       "status": 201,
-      "timestamp": 1795534565985
+      "timestamp": 1795535760445
     }
   ],
   "finalUiState": {
-    "transactionResultText": "Accepted: TP-1795534565946",
+    "transactionResultText": "Accepted: TP-1795535760432",
     "transactionResultClass": "transaction-result success",
     "notificationText": "Transaction validated successfully.",
     "notificationClass": "notification visible success",
