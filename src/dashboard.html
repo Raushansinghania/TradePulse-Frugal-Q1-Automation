@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradePulse | Trading Terminal</title>
+
+    <link rel="stylesheet" href="/dashboard.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon">◈</span>
+                <span>TradePulse</span>
+            </div>
+
+            <nav class="navigation">
+                <a class="nav-item active" href="#dashboard">
+                    ◫ Dashboard
+                </a>
+
+                <a class="nav-item" href="#markets">
+                    ◈ Markets
+                </a>
+
+                <a class="nav-item" href="#orders">
+                    ▤ Orders
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <span class="connection-dot"></span>
+                <span id="connectionStatus">Connecting...</span>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">MARKET OVERVIEW</p>
+                    <h1>Trading Dashboard</h1>
+                </div>
+
+                <div class="user-profile">
+                    <div class="avatar">RK</div>
+                    <div>
+                        <strong>Trader Account</strong>
+                        <small>Demo Environment</small>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- Market Summary -->
+            <section class="market-summary" id="markets">
+
+                <div class="summary-card">
+                    <span class="muted">Trading Pair</span>
+                    <h2>BTC / USDT</h2>
+                    <span class="positive">Bitcoin</span>
+                </div>
+
+                <div class="summary-card">
+                    <span class="muted">Live Price</span>
+                    <h2 id="livePrice">$67,450.00</h2>
+                    <span id="priceChange" class="positive">
+                        Live Market Data
+                    </span>
+                </div>
+
+                <div class="summary-card">
+                    <span class="muted">Last Update</span>
+                    <h2 id="lastUpdate">Waiting...</h2>
+                    <span class="muted">WebSocket Stream</span>
+                </div>
+
+                <div class="summary-card">
+                    <span class="muted">System Status</span>
+                    <h2 id="syncStatus">Initializing</h2>
+                    <span id="syncDescription" class="muted">
+                        Waiting for market data
+                    </span>
+                </div>
+
+            </section>
+
+            <!-- Chart and Order Panel -->
+            <section class="workspace">
+
+                <!-- Chart Panel -->
+                <div class="chart-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>BTC / USDT Chart</h2>
+                            <p class="muted">Real-time price movement</p>
+                        </div>
+
+                        <span class="live-badge">
+                            <span class="connection-dot"></span>
+                            LIVE
+                        </span>
+
+                    </div>
+
+                    <!-- Loading Skeleton -->
+                    <div id="chartSkeleton" class="chart-skeleton">
+
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-chart"></div>
+                        <p>Synchronizing market data...</p>
+
+                    </div>
+
+                    <!-- Canvas -->
+                    <div id="chartContainer" class="chart-container">
+
+                        <canvas
+                            id="priceChart"
+                            width="900"
+                            height="400"
+                            aria-label="Live BTC USDT price chart">
+                        </canvas>
+
+                    </div>
+
+                    <div class="chart-footer">
+                        <span id="chartState">Waiting for first update</span>
+                        <span id="sequenceNumber">Sequence: 0</span>
+                    </div>
+
+                </div>
+
+                <!-- Order Panel -->
+                <div class="order-panel" id="orders">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Quick Trade</h2>
+                            <p class="muted">Simulation only</p>
+                        </div>
+                    </div>
+
+                    <div class="asset-box">
+                        <span class="muted">Selected Asset</span>
+                        <h3>Bitcoin (BTC)</h3>
+                        <strong id="orderPrice">$67,450.00</strong>
+                    </div>
+
+                    <label for="quantity">Quantity (BTC)</label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="0.00001"
+                        step="0.00001"
+                        value="0.001"
+                    >
+
+                    <label for="precision">Price Precision</label>
+
+                    <input
+                        type="text"
+                        id="precision"
+                        value="67450.00"
+                    >
+
+                    <div class="action-buttons">
+
+                        <button
+                            id="buyButton"
+                            class="buy-button"
+                            data-testid="buy-button">
+                            BUY BTC
+                        </button>
+
+                        <button
+                            id="sellButton"
+                            class="sell-button"
+                            data-testid="sell-button">
+                            SELL BTC
+                        </button>
+
+                    </div>
+
+                    <p class="muted order-note">
+                        This is a simulated trading environment.
+                        No real money is involved.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Transaction Result -->
+            <section class="transaction-panel">
+
+                <h2>Transaction Activity</h2>
+
+                <div
+                    id="transactionResult"
+                    class="transaction-result"
+                    role="status"
+                    aria-live="polite">
+                    No transactions submitted yet.
+                </div>
+
+            </section>
+
+            <!-- System Notifications -->
+            <div
+                id="notification"
+                class="notification"
+                role="alert"
+                aria-live="assertive">
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Application State -->
+    <div
+        id="appState"
+        data-state-sync="false"
+        data-state="loading"
+        data-rendered="false"
+        hidden>
+    </div>
+
+    <script src="/websocket.js"></script>
+    <script src="/dashboard.js"></script>
+
+</body>
+</html>
