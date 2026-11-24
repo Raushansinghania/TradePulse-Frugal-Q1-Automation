@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "playwright test",
     "start": "node src/server.js",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:list": "playwright test --reporter=list",
+    "test:report": "playwright show-report"
   },
   "keywords": [],
   "author": "",

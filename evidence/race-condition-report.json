@@ -1,0 +1,47 @@
+{
+  "testTimestamp": "2026-11-24T15:08:29.659Z",
+  "renderEventTimestamp": 1578.8999999761581,
+  "firstClickTimestamp": 1636,
+  "firstClickDelayMs": 57.1,
+  "clickTimestamps": [
+    1636,
+    1638.0999999046326,
+    1638.0999999046326
+  ],
+  "inConfiguredWindow": true,
+  "targetOffsetConfigured": 50,
+  "allowedWindow": {
+    "min": 30,
+    "max": 120
+  },
+  "eventDetail": {
+    "fromCache": true
+  },
+  "buttonDisabledAfterBurst": true,
+  "transactionRequestsCount": 1,
+  "transactionResponsesCount": 1,
+  "requestsPayloads": [
+    {
+      "url": "http://127.0.0.1:3000/api/transaction",
+      "method": "POST",
+      "postData": "{\"action\":\"BUY\",\"symbol\":\"BTCUSDT\",\"quantity\":0.001,\"precision\":\"67450.00\"}",
+      "timestamp": 1795532909185
+    }
+  ],
+  "responsesPayloads": [
+    {
+      "url": "http://127.0.0.1:3000/api/transaction",
+      "status": 201,
+      "timestamp": 1795532909253
+    }
+  ],
+  "finalUiState": {
+    "transactionResultText": "Accepted: TP-1795532909177",
+    "transactionResultClass": "transaction-result success",
+    "notificationText": "Transaction validated successfully.",
+    "notificationClass": "notification visible success",
+    "buyButtonDisabled": false
+  },
+  "duplicateDetected": false,
+  "isConsistent": true
+}

@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-11-24T15:08:25.842Z",
+  "durationMs": 1286,
+  "success": true,
+  "elapsedMs": 1249,
+  "transitions": [
+    {
+      "state": "loading",
+      "sync": false,
+      "timestamp": 377.7999999523163
+    },
+    {
+      "state": "rendering",
+      "sync": false,
+      "timestamp": 1580.5
+    },
+    {
+      "state": "synchronized",
+      "sync": true,
+      "timestamp": 1622.8999999761581
+    }
+  ],
+  "events": [
+    {
+      "type": "tradepulse:rendered",
+      "detail": {
+        "sequence": 91,
+        "price": 67440.59
+      },
+      "timestamp": 1622.6000000238419,
+      "lastRenderAt": 1622.5
+    }
+  ],
+  "diagnostics": {
+    "state": "synchronized",
+    "synchronized": true,
+    "rendered": true,
+    "sequence": 91,
+    "price": 67440.59,
+    "previousPrice": 67439.01,
+    "pointsCount": 5,
+    "lastRenderAt": 1622.5,
+    "connection": true,
+    "isSubmitting": false
+  },
+  "canvasVerified": true,
+  "lastRenderAt": 1622.5,
+  "finalState": "synchronized",
+  "finalSync": "true"
+}

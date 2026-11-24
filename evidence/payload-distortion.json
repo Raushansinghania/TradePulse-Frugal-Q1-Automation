@@ -1,0 +1,38 @@
+{
+  "testTimestamp": "2026-11-24T15:08:01.650Z",
+  "originalPayload": {
+    "action": "BUY",
+    "symbol": "BTCUSDT",
+    "quantity": 0.001,
+    "precision": "67450.00"
+  },
+  "modifiedPayload": {
+    "action": "BUY",
+    "symbol": "BTCUSDT",
+    "quantity": 0.001,
+    "precision": "0x123"
+  },
+  "mutatedField": "precision",
+  "malformedValue": "0x123",
+  "serverStatusCode": 400,
+  "serverResponsePayload": {
+    "success": false,
+    "error": "Invalid mathematical precision",
+    "code": "PRECISION_VALIDATION_FAILED"
+  },
+  "capturedConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+    },
+    {
+      "type": "error",
+      "text": "[TRANSACTION ERROR] Error: Invalid mathematical precision (PRECISION_VALIDATION_FAILED)\n    at submitTransaction (http://127.0.0.1:3000/dashboard.js:476:23)"
+    }
+  ],
+  "uiFeedbackText": "Transaction rejected: Invalid mathematical precision (PRECISION_VALIDATION_FAILED)",
+  "uiFeedbackClass": "transaction-result error",
+  "toastNotificationText": "Invalid mathematical precision (PRECISION_VALIDATION_FAILED)",
+  "toastNotificationClass": "notification visible error",
+  "safeRejectionVerified": true
+}

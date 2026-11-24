@@ -133,6 +133,9 @@
         if (status === 'connected') {
             elements.syncDescription.textContent =
                 'Receiving market data';
+            if (!market.firstPaintCompleted) {
+                setState('loading', false);
+            }
         }
     }
 
@@ -239,7 +242,7 @@ if (
 
     });
 }
-
+    }
 
     // ==========================================
     // 6. INITIAL CHART RENDERING
@@ -263,6 +266,7 @@ if (
 
             requestAnimationFrame(() => {
                 market.firstPaintCompleted = true;
+                elements.appState.dataset.rendered = 'true';
 
                 setState('synchronized', true);
 
@@ -410,9 +414,15 @@ if (
     // 8. TRANSACTION SUBMISSION
     // ==========================================
 
-    async function submitTransaction(action) {
-        const quantity = Number(elements.quantity.value);
+    let isSubmitting = false;
 
+    async function submitTransaction(action) {
+        if (isSubmitting) {
+            console.warn('[TRANSACTION] Duplicate submission prevented by in-flight lock');
+            return;
+        }
+
+        const quantity = Number(elements.quantity.value);
         const precision = elements.precision.value;
 
         if (
@@ -423,10 +433,12 @@ if (
                 'Please enter a valid quantity.',
                 'error'
             );
-
+            elements.transaction.className = 'transaction-result error';
+            elements.transaction.textContent = 'Invalid quantity specified';
             return;
         }
 
+        isSubmitting = true;
         const payload = {
             action,
             symbol: 'BTCUSDT',
@@ -459,9 +471,9 @@ if (
             const result = await response.json();
 
             if (!response.ok) {
-                throw new Error(
-                    result.error || 'Transaction rejected'
-                );
+                const errorMsg = result.error || 'Transaction rejected';
+                const codeSuffix = result.code ? ` (${result.code})` : '';
+                throw new Error(`${errorMsg}${codeSuffix}`);
             }
 
             elements.transaction.className =
@@ -492,6 +504,7 @@ if (
         } finally {
             elements.buy.disabled = false;
             elements.sell.disabled = false;
+            isSubmitting = false;
         }
     }
 
@@ -549,6 +562,8 @@ if (
     // 12. WEBSOCKET INITIALIZATION
     // ==========================================
 
+    setState('idle', false);
+
     socket = new window.TradePulseSocket(
         updatePrice,
         updateConnection
@@ -563,18 +578,15 @@ if (
     window.tradePulseDiagnostics = {
         getState: () => ({
             state: elements.appState.dataset.state,
-
-            synchronized:
-                elements.appState.dataset.stateSync === 'true',
-
+            synchronized: elements.appState.dataset.stateSync === 'true',
+            rendered: elements.appState.dataset.rendered === 'true',
             sequence: market.sequence,
-
             price: market.lastPrice,
-
-            rendered: market.firstPaintCompleted,
-
-            connection:
-                socket?.socket?.readyState === WebSocket.OPEN
+            previousPrice: market.previousPrice,
+            pointsCount: market.prices.length,
+            lastRenderAt: window.__lastTradePulseRenderAt || 0,
+            connection: socket?.socket?.readyState === WebSocket.OPEN,
+            isSubmitting
         })
     };
 

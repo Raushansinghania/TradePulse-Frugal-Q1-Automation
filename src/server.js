@@ -35,25 +35,29 @@ app.post('/api/transaction', (req, res) => {
   if (!['BUY', 'SELL'].includes(action)) {
     return res.status(400).json({
       success: false,
-      error: 'Invalid transaction action'
+      error: 'Invalid transaction action',
+      code: 'ACTION_VALIDATION_FAILED'
     });
   }
 
   if (typeof symbol !== 'string' || symbol.length > 20) {
     return res.status(400).json({
       success: false,
-      error: 'Invalid trading symbol'
+      error: 'Invalid trading symbol',
+      code: 'SYMBOL_VALIDATION_FAILED'
     });
   }
 
   if (
     typeof quantity !== 'number' ||
     !Number.isFinite(quantity) ||
-    quantity <= 0
+    quantity <= 0 ||
+    quantity > 1000000
   ) {
     return res.status(400).json({
       success: false,
-      error: 'Invalid quantity'
+      error: 'Invalid quantity',
+      code: 'QUANTITY_VALIDATION_FAILED'
     });
   }
 

@@ -1,0 +1,88 @@
+{
+  "finalState": "CLOSED",
+  "consecutiveFailures": 0,
+  "summary": {
+    "executionId": "CB-1795532913545",
+    "attempt": 2,
+    "previousState": "HALF_OPEN",
+    "finalState": "CLOSED",
+    "outcome": "SUCCESS",
+    "recovered": true,
+    "result": {
+      "status": "STABILIZED"
+    }
+  },
+  "history": [
+    {
+      "executionId": "CB-1795532913545",
+      "attempt": 1,
+      "circuitState": "CLOSED",
+      "failureReason": "Simulated transient coordinate misalignment",
+      "retryDelayMs": 250,
+      "recalculatedCoordinates": {
+        "valid": true,
+        "rect": {
+          "left": 288,
+          "top": 370,
+          "width": 631,
+          "height": 330
+        },
+        "devicePixelRatio": 1,
+        "targetCoordinates": {
+          "x": 884,
+          "y": 535
+        },
+        "timestamp": 1587.7000000476837
+      },
+      "syncStatus": {
+        "synchronized": true,
+        "state": "synchronized",
+        "rendered": true,
+        "connectionOpen": true,
+        "sequence": 116
+      },
+      "timestamp": 1795532913569
+    },
+    {
+      "executionId": "CB-1795532913545",
+      "attempt": 2,
+      "circuitState": "OPEN",
+      "failureReason": "Simulated transient coordinate misalignment",
+      "retryDelayMs": 500,
+      "recalculatedCoordinates": {
+        "valid": true,
+        "rect": {
+          "left": 288,
+          "top": 370,
+          "width": 631,
+          "height": 330
+        },
+        "devicePixelRatio": 1,
+        "targetCoordinates": {
+          "x": 884,
+          "y": 535
+        },
+        "timestamp": 1874.6000000238419
+      },
+      "syncStatus": {
+        "synchronized": true,
+        "state": "synchronized",
+        "rendered": true,
+        "connectionOpen": true,
+        "sequence": 117
+      },
+      "timestamp": 1795532913856
+    },
+    {
+      "executionId": "CB-1795532913545",
+      "attempt": 2,
+      "previousState": "HALF_OPEN",
+      "finalState": "CLOSED",
+      "outcome": "SUCCESS",
+      "recovered": true,
+      "result": {
+        "status": "STABILIZED"
+      }
+    }
+  ]
+}
