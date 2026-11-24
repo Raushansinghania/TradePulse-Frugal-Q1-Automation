@@ -117,15 +117,12 @@ class RaceConditionTester {
           requestAnimationFrame(waitForWindow);
         }
 
-        // Check if render event already fired recently or listen for the next one
-        if (window.__lastTradePulseRenderAt && (performance.now() - window.__lastTradePulseRenderAt < 500)) {
-          runAttack(window.__lastTradePulseRenderAt, { fromCache: true });
-        } else {
-          window.addEventListener('tradepulse:rendered', (e) => {
-            const renderTimestamp = window.__lastTradePulseRenderAt || performance.now();
-            runAttack(renderTimestamp, e.detail);
-          }, { once: true });
-        }
+        // Listen for the next fresh tradepulse:rendered event to guarantee execution
+        // strictly within the target [30, 120] ms window without stale render timestamp drift
+        window.addEventListener('tradepulse:rendered', (e) => {
+          const renderTimestamp = window.__lastTradePulseRenderAt || performance.now();
+          runAttack(renderTimestamp, e.detail);
+        }, { once: true });
       });
     }, {
       selector: targetSelector,

@@ -11,6 +11,7 @@ module.exports = defineConfig({
   },
 
   fullyParallel: false,
+  workers: 1,
 
   reporter: [
     ['list'],
