@@ -1,82 +1,93 @@
 {
-  "packetsReceived": 23,
-  "packetsDropped": 5,
+  "packetsReceived": 26,
+  "packetsDropped": 6,
   "packetsForwarded": 6,
   "droppedSequences": [
-    125,
-    129,
-    133,
-    137,
-    141
+    195,
+    199,
+    203,
+    207,
+    211,
+    215
   ],
   "forwardedSequences": [
-    122,
-    123,
-    124,
-    126,
-    127,
-    128
+    192,
+    193,
+    194,
+    196,
+    197,
+    198
   ],
   "sequenceGaps": [
     {
-      "fromSequence": 122,
-      "toSequence": 130,
+      "fromSequence": 192,
+      "toSequence": 200,
       "missingCount": 7
     },
     {
-      "fromSequence": 122,
-      "toSequence": 131,
+      "fromSequence": 192,
+      "toSequence": 201,
       "missingCount": 8
     },
     {
-      "fromSequence": 123,
-      "toSequence": 132,
-      "missingCount": 8
+      "fromSequence": 192,
+      "toSequence": 202,
+      "missingCount": 9
     },
     {
-      "fromSequence": 123,
-      "toSequence": 134,
+      "fromSequence": 193,
+      "toSequence": 204,
       "missingCount": 10
     },
     {
-      "fromSequence": 123,
-      "toSequence": 135,
+      "fromSequence": 193,
+      "toSequence": 205,
       "missingCount": 11
     },
     {
-      "fromSequence": 123,
-      "toSequence": 136,
+      "fromSequence": 193,
+      "toSequence": 206,
       "missingCount": 12
     },
     {
-      "fromSequence": 126,
-      "toSequence": 138,
-      "missingCount": 11
+      "fromSequence": 193,
+      "toSequence": 208,
+      "missingCount": 14
     },
     {
-      "fromSequence": 126,
-      "toSequence": 139,
+      "fromSequence": 196,
+      "toSequence": 209,
       "missingCount": 12
     },
     {
-      "fromSequence": 126,
-      "toSequence": 140,
+      "fromSequence": 196,
+      "toSequence": 210,
       "missingCount": 13
     },
     {
-      "fromSequence": 126,
-      "toSequence": 142,
+      "fromSequence": 196,
+      "toSequence": 212,
       "missingCount": 15
     },
     {
-      "fromSequence": 126,
-      "toSequence": 143,
+      "fromSequence": 196,
+      "toSequence": 213,
       "missingCount": 16
     },
     {
-      "fromSequence": 128,
-      "toSequence": 144,
-      "missingCount": 15
+      "fromSequence": 196,
+      "toSequence": 214,
+      "missingCount": 17
+    },
+    {
+      "fromSequence": 196,
+      "toSequence": 216,
+      "missingCount": 19
+    },
+    {
+      "fromSequence": 198,
+      "toSequence": 217,
+      "missingCount": 18
     }
   ],
   "jitterApplied": [
@@ -97,11 +108,13 @@
     6200,
     2500,
     2200,
-    3100
+    3100,
+    4500,
+    2600
   ],
-  "averageLatency": 3661,
+  "averageLatency": 3650,
   "maximumLatency": 6200,
   "connectionState": "INTERCEPTING",
-  "startTime": 1795532914545,
-  "endTime": 1795532922668
+  "startTime": 1795534574916,
+  "endTime": 1795534582763
 }

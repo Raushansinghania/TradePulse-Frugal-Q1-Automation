@@ -1,50 +1,50 @@
 {
-  "timestamp": "2026-11-24T15:08:25.842Z",
-  "durationMs": 1286,
+  "timestamp": "2026-11-24T15:36:08.857Z",
+  "durationMs": 1623,
   "success": true,
-  "elapsedMs": 1249,
+  "elapsedMs": 1510,
   "transitions": [
     {
       "state": "loading",
       "sync": false,
-      "timestamp": 377.7999999523163
+      "timestamp": 284
     },
     {
       "state": "rendering",
       "sync": false,
-      "timestamp": 1580.5
+      "timestamp": 1788.3999999761581
     },
     {
       "state": "synchronized",
       "sync": true,
-      "timestamp": 1622.8999999761581
+      "timestamp": 1817
     }
   ],
   "events": [
     {
       "type": "tradepulse:rendered",
       "detail": {
-        "sequence": 91,
-        "price": 67440.59
+        "sequence": 168,
+        "price": 67350.39
       },
-      "timestamp": 1622.6000000238419,
-      "lastRenderAt": 1622.5
+      "timestamp": 1816.7000000476837,
+      "lastRenderAt": 1816.6000000238419
     }
   ],
   "diagnostics": {
     "state": "synchronized",
     "synchronized": true,
     "rendered": true,
-    "sequence": 91,
-    "price": 67440.59,
-    "previousPrice": 67439.01,
+    "sequence": 168,
+    "price": 67350.39,
+    "previousPrice": 67353.82,
     "pointsCount": 5,
-    "lastRenderAt": 1622.5,
+    "lastRenderAt": 1816.6000000238419,
     "connection": true,
     "isSubmitting": false
   },
   "canvasVerified": true,
-  "lastRenderAt": 1622.5,
+  "lastRenderAt": 1816.6000000238419,
   "finalState": "synchronized",
   "finalSync": "true"
 }

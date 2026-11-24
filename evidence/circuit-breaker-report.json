@@ -2,7 +2,7 @@
   "finalState": "CLOSED",
   "consecutiveFailures": 0,
   "summary": {
-    "executionId": "CB-1795532913545",
+    "executionId": "CB-1795534556625",
     "attempt": 2,
     "previousState": "HALF_OPEN",
     "finalState": "CLOSED",
@@ -14,7 +14,7 @@
   },
   "history": [
     {
-      "executionId": "CB-1795532913545",
+      "executionId": "CB-1795534556625",
       "attempt": 1,
       "circuitState": "CLOSED",
       "failureReason": "Simulated transient coordinate misalignment",
@@ -32,19 +32,19 @@
           "x": 884,
           "y": 535
         },
-        "timestamp": 1587.7000000476837
+        "timestamp": 1422
       },
       "syncStatus": {
         "synchronized": true,
         "state": "synchronized",
         "rendered": true,
         "connectionOpen": true,
-        "sequence": 116
+        "sequence": 125
       },
-      "timestamp": 1795532913569
+      "timestamp": 1795534556657
     },
     {
-      "executionId": "CB-1795532913545",
+      "executionId": "CB-1795534556625",
       "attempt": 2,
       "circuitState": "OPEN",
       "failureReason": "Simulated transient coordinate misalignment",
@@ -62,19 +62,19 @@
           "x": 884,
           "y": 535
         },
-        "timestamp": 1874.6000000238419
+        "timestamp": 1714
       },
       "syncStatus": {
         "synchronized": true,
         "state": "synchronized",
         "rendered": true,
         "connectionOpen": true,
-        "sequence": 117
+        "sequence": 126
       },
-      "timestamp": 1795532913856
+      "timestamp": 1795534556949
     },
     {
-      "executionId": "CB-1795532913545",
+      "executionId": "CB-1795534556625",
       "attempt": 2,
       "previousState": "HALF_OPEN",
       "finalState": "CLOSED",
